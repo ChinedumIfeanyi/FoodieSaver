@@ -1,16 +1,17 @@
 import Layout from "../components/Layout"
 import React, { Component } from "react"
-import Link from "next/link"
 
 
-class Register extends Component {
+class RegisterFarm extends Component {
 
 	state = {
 		inputFields : {
 			firstname: "",
 			lastname: "",
 			email: "",
-			password: ""
+			password: "",
+			bizname: "",
+			farmproduce: ""
 		}
 
 	}
@@ -36,17 +37,13 @@ class Register extends Component {
 			firstname,
 			lastname,
 			email,
-			password
+			password,
+			bizname,
+			farmproduce
 		} = this.state.inputFields
 
 		return (
 			<Layout>
-
-				<div className="farmer">
-					<Link href="/registerfarm">
-						<a> Register as a Farmer </a>
-					</Link>
-				</div>
 
 				<section>
 					<form 
@@ -111,11 +108,41 @@ class Register extends Component {
 									name="password" 
 								/> 
 							</div>
+						</div>						
+
+						<div>
+							<label htmlFor="bizname"> 
+									Business Name 
+							</label>
+							<div>
+								<input 
+									onChange={ this.handleChange }
+									value={ bizname }
+									id="bizname"
+									type="text" 
+									name="bizname" 
+								/> 
+							</div>
+						</div>						
+
+						<div>
+							<label htmlFor="farmproduce"> 
+									Farm Produce 
+							</label>
+							<div>
+								<input 
+									onChange={ this.handleChange }
+									value={ farmproduce }
+									id="farmproduce"
+									type="text" 
+									name="farmproduce" 
+								/> 
+							</div>
 						</div>
 
 						<div>
 							<input type="submit" 
-								value="REGISTER"
+								value="REGISTER FARM"
 							/>
 						</div>
 					</form>
@@ -124,4 +151,4 @@ class Register extends Component {
 		)
 	}
 }
-export default Register
+export default RegisterFarm
