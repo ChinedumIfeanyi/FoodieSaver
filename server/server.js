@@ -3,14 +3,18 @@ const next = require('next')
 
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const passport = require('passport')
 const config = require('./config/utils')
+
+//passport configuration
+const authenticate = require('./config/passport')
+
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
 //database connection
-
 mongoose.connect(
   config.db, 
   { useNewUrlParser: true },
@@ -30,8 +34,14 @@ app
   .prepare()
   .then(() => {
     const server = express()
-    server.use(bodyParser())
-    server.use('/auth', userAuth)
+    server.use(bodyParser.urlencoded({
+      extended: false
+    }))
+    server.use(passport.initialize() )
+    server.use('/auth', 
+      // authenticate.verifyUser,
+      userAuth
+    )
     
 
     server.get('*', (req, res) => {

@@ -45,31 +45,26 @@ class UserAuthCtrl {
 
 
 	static Login(req,res) {
-
+		
 		passport.authenticate('local')(req,res, ()=>{
-					console.log(req.user)
 
-				//user unique info
-				// const payload = {
-				// 	id: req.user.id,
-				// 	name: req.user.username
-				// }
-				// //if user authenticates succesfully
-				// //assign unique token for user
-				// jwt.sign(payload, config.secret, (err,token) =>{
-				// 	if(err) {
-				// 		throw err
-				// 	}else{
-				// 		return res.json({
-				// 			message: "Login Success",
-				// 			token
-				// 		})
-				// 	}
-				// })
-
+			const payload = {
+				id: req.user._id,
+				name: req.user.username
+			}
+			jwt.sign(payload, config.secret, (err,token) =>{
+				if(err) {
+					throw err
+				}else{
+					return res.json({
+						message: "Login Success",
+						token
+					})
+				}
 			})
+		})
 
-
+		
 	}
 
 
