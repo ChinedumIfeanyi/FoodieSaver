@@ -42,7 +42,7 @@ class Register extends Component {
 		return (
 			<Layout>
 
-				<div className="farmer">
+				<div className="farmer mb-4">
 					<Link href="/registerfarm">
 						<a> Register as a Farmer </a>
 					</Link>
@@ -57,7 +57,7 @@ class Register extends Component {
 							<label htmlFor="firstname"> 
 									Firstname 
 							</label>
-							<div>
+							<div className="mb-4">
 								<input 
 									onChange={ this.handleChange }
 									value={ firstname }
@@ -68,7 +68,7 @@ class Register extends Component {
 							</div>
 						</div>	
 
-						<div>
+						<div className="mb-4">
 							<label htmlFor="lastname"> 
 									Lastname 
 							</label>
@@ -83,7 +83,7 @@ class Register extends Component {
 							</div>
 						</div>	
 
-						<div>
+						<div className="mb-4">
 							<label htmlFor="email"> 
 									Email 
 							</label>
@@ -98,7 +98,7 @@ class Register extends Component {
 							</div>
 						</div>
 
-						<div>
+						<div className="mb-4">
 							<label htmlFor="password"> 
 									Password 
 							</label>
@@ -113,12 +113,24 @@ class Register extends Component {
 							</div>
 						</div>
 
-						<div>
+						<div className="mb-4">
 							<input type="submit" 
 								value="REGISTER"
 							/>
 						</div>
 					</form>
+
+					<style>{`
+						section {
+							height: 70vh;
+							width: 70%;
+							text-align: center;
+							margin: auto;
+						}
+						.farmer {
+							text-align: center;
+						}
+					`}</style>
 				</section>
 			</Layout>
 		)

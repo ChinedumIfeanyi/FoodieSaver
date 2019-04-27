@@ -50,7 +50,7 @@ class RegisterFarm extends Component {
 						method="POST" 
 						onSubmit={ this.submitForm }
 					>
-						<div>
+						<div className="mb-4">
 							<label htmlFor="firstname"> 
 									Firstname 
 							</label>
@@ -65,7 +65,7 @@ class RegisterFarm extends Component {
 							</div>
 						</div>	
 
-						<div>
+						<div className="mb-4">
 							<label htmlFor="lastname"> 
 									Lastname 
 							</label>
@@ -80,7 +80,7 @@ class RegisterFarm extends Component {
 							</div>
 						</div>	
 
-						<div>
+						<div className="mb-4">
 							<label htmlFor="email"> 
 									Email 
 							</label>
@@ -95,7 +95,7 @@ class RegisterFarm extends Component {
 							</div>
 						</div>
 
-						<div>
+						<div className="mb-4">
 							<label htmlFor="password"> 
 									Password 
 							</label>
@@ -110,7 +110,7 @@ class RegisterFarm extends Component {
 							</div>
 						</div>						
 
-						<div>
+						<div className="mb-4">
 							<label htmlFor="bizname"> 
 									Business Name 
 							</label>
@@ -125,27 +125,22 @@ class RegisterFarm extends Component {
 							</div>
 						</div>						
 
-						<div>
-							<label htmlFor="farmproduce"> 
-									Farm Produce 
-							</label>
-							<div>
-								<input 
-									onChange={ this.handleChange }
-									value={ farmproduce }
-									id="farmproduce"
-									type="text" 
-									name="farmproduce" 
-								/> 
-							</div>
-						</div>
-
-						<div>
+						
+						<div className="mb-4">
 							<input type="submit" 
 								value="REGISTER FARM"
 							/>
 						</div>
 					</form>
+
+					<style>{`
+						section {
+							height: 80vh;
+							width: 70%;
+							text-align: center;
+							margin: auto;
+						}
+					`}</style>
 				</section>
 			</Layout>
 		)

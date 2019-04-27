@@ -34,19 +34,28 @@ class Login extends Component {
 			<Layout>
 				<section>
 
-					<div className="auth0">
-						<Link href="/facebook">
-							<a> Continue With Facebook </a>
-						</Link>
-						<Link href="/google">
-							<a> Continue With Google </a>
-						</Link>
+					<div className="auth0 mb-4">
+						<ul>
+							<li className="mb-2">
+								<Link href="/facebook" >
+									<a> Continue With Facebook </a>
+								</Link>
+							</li>
+
+							<li className="mb-2">
+								<Link href="/google">
+									<a> Continue With Google </a>
+								</Link>
+							</li>
+						</ul>
 					</div>
 
 					<form
 						method="POST" 
-						onSubmit={this.submitForm.bind(this)} >
-						<div>
+						onSubmit={this.submitForm.bind(this)} 
+					>
+						
+						<div className="mb-4">
 							<label htmlFor="email"> 
 									Email 
 							</label>
@@ -61,7 +70,7 @@ class Login extends Component {
 							</div>
 						</div>						
 
-						<div>
+						<div className="mb-4">
 							<label htmlFor="password"> 
 									Password 
 							</label>
@@ -82,6 +91,20 @@ class Login extends Component {
 							/>
 						</div>
 					</form>
+
+					<style jsx>{`
+
+						section {
+							height: 70vh;
+							width: 70%;
+							text-align: center;
+							margin: auto;
+						}	
+						li {
+							list-style-type: none;
+						}
+
+					`}</style>
 				</section>
 			</Layout>
 		)
