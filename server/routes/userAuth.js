@@ -1,15 +1,14 @@
 const router = require('express').Router()
 
+//controller
+const UserAuthCtrl = require('../controllers/UserAuthCtrl')
+
 router.route('/login')
-	.get((req,res)=> {
-		res.json("login")
-	})
+	.post(UserAuthCtrl.Login)
 
 
 router.route('/register')
-	.post((req,res)=>{
-		res.json('register')
-	})
+	.post(UserAuthCtrl.Register)
 
 
 module.exports = router
