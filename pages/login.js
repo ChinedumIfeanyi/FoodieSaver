@@ -37,7 +37,7 @@ class Login extends Component {
 					<div className="auth0 mb-4">
 						<ul>
 							<li className="mb-2">
-								<Link href="/facebook" >
+								<Link href="/auth/facebook" >
 									<a> Continue With Facebook </a>
 								</Link>
 							</li>

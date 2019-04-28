@@ -9,7 +9,6 @@ const config = require('./config/utils')
 //passport configuration
 const authenticate = require('./config/passport')
 
-
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
@@ -34,10 +33,15 @@ app
   .prepare()
   .then(() => {
     const server = express()
+      
+    //facebook authentication
+    require('./config/facebookAuth')(server)
+
     server.use(bodyParser.urlencoded({
       extended: false
     }))
     server.use(passport.initialize() )
+    
     server.use('/auth', 
       // authenticate.verifyUser,
       userAuth

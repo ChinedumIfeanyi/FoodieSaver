@@ -6,7 +6,8 @@ const UserSchema = new Schema ({
 	username: String,
 	lastname: String,
 	email: String,
-	password: String
+	password: String,
+	facebookID: String
 })
 
 UserSchema.plugin( passportLocalMongoose )
