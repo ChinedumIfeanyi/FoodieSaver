@@ -7,7 +7,7 @@ module.exports = function(app) {
 	passport.use(new facebookStrategy({
 		clientID: "596228120812198",
 		clientSecret: "960f54407f7953db1dbd0fc7ad90d197",
-		callbackURL: '/auth/facebook/callback'
+		callbackURL: 'https://foodiesaver.herokuapp.com/auth/facebook/callback'
 	}, 
 		(accessToken, refreshToken, profile, cb) =>{
 			User.find({ facebookID: profile.id }, (err,user) => {
